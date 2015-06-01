@@ -15,4 +15,6 @@ Arv* inicia(void);
 Arv* criaArvore(char c, Arv* al, Arv* ar);
 int vazio(Arv* a);
 void imprime (Arv* a);
+void imprimeCascata(Arv* a);
+void liberaArvore(Arv* a);
 #endif // LIBARVORE_H_INCLUDED

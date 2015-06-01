@@ -14,8 +14,8 @@ Arv* inicia(void)
 /**
  * \author Jaicimara Weber
  * \date 01/06/2015
- * \brief Inicializa árvore
- * \return NULL
+ * \brief Cria árvore
+ * \return Arv*
  */
 Arv* criaArvore(char c, Arv* al, Arv* ar)
 {
@@ -39,10 +39,10 @@ int vazio (Arv* a)
 }
 
 /**
- * \author Jaicimara Weber
- * \date 01/06/2015
- * \brief Inicializa árvore
- * \return NULL
+ * \author  Jaicimara Weber
+ * \date    01/06/2015
+ * \brief   Imprime arvore binaria
+ * \param   Arv* a
  */
 void imprime (Arv* a)
 {
@@ -50,5 +50,40 @@ void imprime (Arv* a)
         printf("%c\t", a->info); /**< exibe a raiz*/
         imprime(a->left);
         imprime(a->right);
+    }
+}
+
+/**
+ * \author  Jaicimara Weber
+ * \date    01/06/2015
+ * \brief   Imprime arvore binaria em cascata
+ * \param   Arv* a
+ */
+void imprimeCascata(Arv* a)
+{
+     if(!vazio(a)){
+        printf("<%c", a->info); /**< exibe a raiz*/
+        if(vazio(a->left))
+            printf("<>");
+        if(vazio(a->right))
+            printf("<>");
+        imprimeCascata(a->left);
+        imprimeCascata(a->right);
+        printf(">");
+    }
+}
+
+/**
+ * \author  Jaicimara Weber
+ * \date    01/06/2015
+ * \brief   Libera o espaço alocado na memória
+ * \param   Arv* a
+ */
+void liberaArvore(Arv* a)
+{
+    if(!vazio(a)){
+        liberaArvore(a->left);
+        liberaArvore(a->right);
+        free(a);
     }
 }
