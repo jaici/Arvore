@@ -72,6 +72,47 @@ void imprimeCascata(Arv* a)
         printf(">");
     }
 }
+/**
+ * \author  Jaicimara Weber
+ * \date    01/06/2015
+ * \brief   Imprime arvore binaria em ordem de esquerda, raiz e direita
+ * \param   Arv* a
+ */
+void imprimeERD(Arv* a)
+{
+    if(!vazio(a)){
+        printf("<");
+        if(vazio(a->left))
+            printf("<>");
+        imprimeERD(a->left);
+        printf("<%c>", a->info);
+        if(vazio(a->right))
+            printf("<>");
+        imprimeERD(a->right);
+        printf(">");
+    }
+}
+
+/**
+ * \author  Jaicimara Weber
+ * \date    01/06/2015
+ * \brief   Imprime arvore binaria em ordem de esquerda, direita e raiz
+ * \param   Arv* a
+ */
+void imprimeEDR(Arv* a)
+{
+    if(!vazio(a)){
+        printf("<");
+        if(vazio(a->left))
+            printf("<>");
+        imprimeEDR(a->left);
+
+        if(vazio(a->right))
+            printf("<>");
+        imprimeEDR(a->right);
+        printf("%c>", a->info);
+    }
+}
 
 /**
  * \author  Jaicimara Weber
@@ -79,11 +120,12 @@ void imprimeCascata(Arv* a)
  * \brief   Libera o espaço alocado na memória
  * \param   Arv* a
  */
-void liberaArvore(Arv* a)
+Arv* liberaArvore(Arv* a)
 {
     if(!vazio(a)){
         liberaArvore(a->left);
         liberaArvore(a->right);
         free(a);
     }
+    return NULL;
 }

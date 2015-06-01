@@ -15,7 +15,7 @@ int main()
                        );
 
 
-    imprimeCascata(teste);
-    liberaArvore(teste);
+    imprimeERD(teste);
+    teste = liberaArvore(teste);
     return 0;
 }
