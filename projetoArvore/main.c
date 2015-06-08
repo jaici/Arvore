@@ -20,8 +20,15 @@ int main()
                                   )
                        );
 
-
+    printf("\nIMPRESSAO\n");
+    imprime(teste);
+    printf("\nIMPRESSAO RED\n");
+    imprimeRED(teste);
+    printf("\nIMPRESSAO EDR\n");
+    imprimeEDR(teste);
+    printf("\nIMPRESSAO ERD\n");
     imprimeERD(teste);
+
     printf("\n\nAltura da arvore %d",alturaArvore(teste));
 
     printf(" \n\nRetorno Busca %d", busca(teste,'h'));

@@ -15,7 +15,7 @@ Arv* inicia(void);
 Arv* criaArvore(char c, Arv* al, Arv* ar);
 int vazio(Arv* a);
 void imprime (Arv* a);
-void imprimeCascata(Arv* a);
+void imprimeRED(Arv* a);
 void imprimeEDR(Arv* a);
 void imprimeERD(Arv* a);
 Arv* liberaArvore(Arv* a);

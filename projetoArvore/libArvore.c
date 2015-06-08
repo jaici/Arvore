@@ -59,7 +59,7 @@ void imprime (Arv* a)
  * \brief   Imprime arvore binaria em cascata
  * \param   Arv* a
  */
-void imprimeCascata(Arv* a)
+void imprimeRED(Arv* a)
 {
      if(!vazio(a)){
         printf("<%c", a->info); /**< exibe a raiz*/
