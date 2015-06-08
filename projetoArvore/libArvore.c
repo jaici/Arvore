@@ -129,3 +129,40 @@ Arv* liberaArvore(Arv* a)
     }
     return NULL;
 }
+
+/**
+ * \author  Jaicimara Weber
+ * \date    01/06/2015
+ * \brief   Determina quantos niveis há na árvore e retorna este valor
+ * \param   Arv* a
+ * \return  int
+ */
+int alturaArvore(Arv* a)
+{
+    if(!vazio(a)){
+        int hl = alturaArvore(a->left);
+        int hr = alturaArvore(a->right);
+        if(hl < hr)
+            return hr+1;
+        else
+            return hl+1;
+    }else{
+        return -1;
+    }
+}
+
+/**
+ * \author  Jaicimara Weber
+ * \date    08/06/2015
+ * \brief   Busca em arvore binária
+ * \param   Arv* a, char i
+ * \return  int
+ */
+int busca(Arv* a , char i)
+{
+    if(vazio(a)){
+        return 0;
+    }else{
+        return a->info==i || busca(a->left, i) || busca(a->right, i);
+    }
+}

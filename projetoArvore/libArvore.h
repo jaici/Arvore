@@ -19,4 +19,6 @@ void imprimeCascata(Arv* a);
 void imprimeEDR(Arv* a);
 void imprimeERD(Arv* a);
 Arv* liberaArvore(Arv* a);
+int alturaArvore(Arv* a);
+int busca(Arv* a , char i);
 #endif // LIBARVORE_H_INCLUDED
